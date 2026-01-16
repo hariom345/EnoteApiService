@@ -1,0 +1,27 @@
+package com.enote.dto;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class NoteRequestDto {
+	
+	@NotBlank(message = "Title is required")
+	@Size(max = 1000, message = "Title must not exceed 1000 characters")
+	private String title;
+	
+	@Size(max = 1000, message = "Description must not exceed 1000 characters")
+	private String description;
+	
+	private Integer categoryId;
+	
+	private Integer fileId;
+	
+	private Short status;
+}
